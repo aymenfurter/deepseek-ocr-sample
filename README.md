@@ -13,7 +13,7 @@
 
 </div>
 
-## 🚀 Overview
+## Overview
 This project provides a framework to evaluate the performance of different Optical Character Recognition (OCR) services (and techniques) combined with Large Language Models (LLMs) for extracting structured data from complex PDF documents.
 
 By running the pipeline, you generate a comparative leaderboard that highlights:
@@ -21,7 +21,7 @@ By running the pipeline, you generate a comparative leaderboard that highlights:
 - **LLM Reasoning:** The ability of models to interpret OCR output (Markdown or Images) and conform to a specific schema.
 - **Cost/Performance:** Insights into trade-offs between different multimodal and text-only approaches.
 
-## ✨ Features
+## Features
 
 - **Multi-Engine Support:**
   - **DeepSeek OCR:** 
@@ -35,7 +35,7 @@ By running the pipeline, you generate a comparative leaderboard that highlights:
 - **Interactive UI:** Includes a Gradio web interface for running benchmarks and viewing results.
 - **Caching:** Smart caching of OCR results to save time and API costs.
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ DOCUMENTINTELLIGENCE_KEY=...
 
 You can deploy the DeepSeek OCR engine as a scalable service within **Azure Container Apps (ACA)**. Please refer to the [`deepseek-ocr`](./deepseek-ocr) folder for specific deployment guides and container configuration to expose the compatible endpoint.
 
-## 🖥️ Usage
+## Usage
 
 ### Command Line Interface
 
@@ -99,7 +99,7 @@ python gradio.py
 ```
 Open your browser to the local URL provided to select scenarios and view the generated HTML leaderboard.
 
-## 📂 Project Structure
+## Project Structure
 
 - `app.py`: Core logic, OCR implementations, LLM clients, and pipeline orchestration.
 - `gradio.py`: Web UI for the benchmark.
