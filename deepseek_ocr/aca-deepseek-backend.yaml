@@ -1,0 +1,29 @@
+properties:
+  workloadProfileName: gpu-a100
+  configuration:
+    activeRevisionsMode: Single
+    ingress:
+      external: false
+      targetPort: 8000
+      transport: Auto
+  template:
+    containers:
+    - name: vllm-inference
+      image: vllm/vllm-openai:latest
+      resources:
+        cpu: 12.0
+        memory: 32Gi
+      env:
+      - name: HUGGING_FACE_HUB_TOKEN
+        value: ""
+      command: ["python3", "-m", "vllm.entrypoints.openai.api_server"]
+      args: ["--model", "deepseek-ai/DeepSeek-OCR", "--trust-remote-code", "--gpu-memory-utilization", "0.9", "--max-model-len", "8192", "--host", "0.0.0.0", "--port", "8000"]
+      probes:
+      - type: Startup
+        httpGet: { path: /health, port: 8000 }
+        initialDelaySeconds: 60
+        periodSeconds: 10
+        failureThreshold: 30
+    scale:
+      minReplicas: 0
+      maxReplicas: 1

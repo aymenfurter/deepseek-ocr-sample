@@ -1,0 +1,8 @@
+old
+.pytest_cache
+.vscode
+prompts
+.env
+data
+.artifacts
+__pycache__

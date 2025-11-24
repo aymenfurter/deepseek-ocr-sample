@@ -1,0 +1,31 @@
+{
+  "name": "Python Dev Container with Azure CLI + Codex",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}/.codex,target=/home/vscode/.codex,type=bind,consistency=cached"
+  ],
+
+  "remoteEnv": {
+    "CODEX_AZURE_OPENAI_API_KEY": "${localEnv:CODEX_AZURE_OPENAI_API_KEY}"
+  },
+
+  "postCreateCommand": "npm install -g @openai/codex@0.50.0",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
+}
