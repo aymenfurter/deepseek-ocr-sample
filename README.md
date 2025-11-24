@@ -1,6 +1,6 @@
 <div align="center">
 
-# DeepSeek OCR & LLM Extraction Accelerator
+# DeepSeek OCR & LLM Extraction 
 
 **Assess and compare various OCR engines and LLM reasoning strategies for structured data extraction from multi-page documents.**
 
