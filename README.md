@@ -51,7 +51,7 @@ By running the pipeline, you generate a comparative leaderboard that highlights:
    pip install -r requirements.txt
    ```
 
-## ⚙️ Configuration
+## Configuration
 
 Create a `.env` file in the root directory with your API credentials:
 
